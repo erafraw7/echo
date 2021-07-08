@@ -1,23 +1,23 @@
 import 'dart:async';
 
-import 'package:laravel_echo/src/util/event-formatter.dart';
 import 'package:laravel_echo/src/channel/channel.dart';
+import 'package:laravel_echo/src/util/event-formatter.dart';
 
 ///
 /// This class represents a pusher channel.
 ///
 class PusherChannel extends Channel {
   /// The Pusher client instance.
-  dynamic pusher;
+  late dynamic pusher;
 
   /// The name of the channel.
-  dynamic name;
+  late dynamic name;
 
   /// Channel options.
-  dynamic options;
+  late dynamic options;
 
   /// The event formatter.
-  EventFormatter eventFormatter;
+  late EventFormatter eventFormatter;
 
   /// The subcription of the channel.
   dynamic subcription;

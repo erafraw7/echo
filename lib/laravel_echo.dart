@@ -1,24 +1,24 @@
 library laravel_echo;
 
 import 'package:laravel_echo/src/channel/channel.dart';
-import 'package:laravel_echo/src/channel/private-channel.dart';
 import 'package:laravel_echo/src/channel/presence-channel.dart';
-import 'package:laravel_echo/src/connector/socketio-connector.dart';
-import 'package:laravel_echo/src/connector/pusher-connector.dart';
+import 'package:laravel_echo/src/channel/private-channel.dart';
 import 'package:laravel_echo/src/connector/null-connector.dart';
+import 'package:laravel_echo/src/connector/pusher-connector.dart';
+import 'package:laravel_echo/src/connector/socketio-connector.dart';
 
 ///
 /// This class is the primary API for interacting with broadcasting.
 ///
 class Echo {
   /// The broadcasting connector.
-  dynamic connector;
+  late dynamic connector;
 
   /// Socket instance
   get socket => this.connector.socket;
 
   /// The Echo options.
-  Map<String, dynamic> options;
+  late Map<String, dynamic> options;
 
   /// Create a new class instance.
   Echo(dynamic options) {

@@ -1,21 +1,21 @@
-import 'package:laravel_echo/src/util/event-formatter.dart';
 import 'package:laravel_echo/src/channel/channel.dart';
+import 'package:laravel_echo/src/util/event-formatter.dart';
 
 ///
 /// This class represents a Socket.io channel.
 ///
 class SocketIoChannel extends Channel {
   /// The Socket.io client instance.
-  dynamic socket;
+  late dynamic socket;
 
   /// The name of the channel.
-  dynamic name;
+  late dynamic name;
 
   /// Channel options.
-  dynamic options;
+  late dynamic options;
 
   /// The event formatter.
-  EventFormatter eventFormatter;
+  late EventFormatter eventFormatter;
 
   /// The event callbacks applied to the channel.
   dynamic events = {};
