@@ -7,6 +7,8 @@ import 'package:laravel_echo/src/connector/null-connector.dart';
 import 'package:laravel_echo/src/connector/pusher-connector.dart';
 import 'package:laravel_echo/src/connector/socketio-connector.dart';
 
+export 'package:laravel_echo/src/channel/push_user.dart';
+
 ///
 /// This class is the primary API for interacting with broadcasting.
 ///
