@@ -1,11 +1,11 @@
-import 'package:laravel_echo/src/channel/pusher-channel.dart';
 import 'package:laravel_echo/src/channel/presence-channel.dart';
+import 'package:laravel_echo/src/channel/push_user.dart';
+import 'package:laravel_echo/src/channel/pusher-channel.dart';
 
 ///
 /// This class represents a Pusher presence channel.
 ///
-class PusherPresenceChannel extends PusherChannel
-    implements PresenceChannel {
+class PusherPresenceChannel extends PusherChannel implements PresenceChannel {
   PusherPresenceChannel(pusher, String name, options)
       : super(pusher, name, options);
 
@@ -13,7 +13,7 @@ class PusherPresenceChannel extends PusherChannel
   @override
   PusherPresenceChannel here(Function callback) {
     this.on('pusher:subscription_succeeded', (data) {
-      callback((data.members).map((k) => data.members[k]));
+      callback((data as List).map((e) => PusherUser.fromJson(e)).toList());
     });
 
     return this;
