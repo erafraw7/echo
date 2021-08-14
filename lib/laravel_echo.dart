@@ -23,7 +23,7 @@ class Echo {
   late Map<String, dynamic> options;
 
   /// Create a new class instance.
-  Echo(dynamic options) {
+  Echo(Map<String, dynamic> options) {
     this.options = options;
     this.connect();
   }
